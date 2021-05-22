@@ -18,7 +18,7 @@ def home(request):
 
 
     context = { 'form':form ,
-                'task_data' : task_data
+                'task_data' : task_data[::-1]
 
     }
 
@@ -29,3 +29,7 @@ def delete_view(request , task_id) :
     task_to_delete = task_model.objects.get(id=task_id)
     task_to_delete.delete()
     return HttpResponseRedirect('/task/') 
+
+
+
+
