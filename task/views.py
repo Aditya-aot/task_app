@@ -25,6 +25,8 @@ def home(request):
 
     return render(request, 'home.html', context)
 
+
+#creating delete view
 def delete_view(request , task_id) :
     task_to_delete = task_model.objects.get(id=task_id)
     task_to_delete.delete()
